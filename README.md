@@ -1,5 +1,5 @@
 # overdigo-alias
-Alias shortcut for linux
+Atalhos alias para distros baseadas em Debian / Ubuntu
 
 Lista de alias: 
 
@@ -8,8 +8,6 @@ alias c='clear'
 alias cd..='cd ..'
 
 alias cd...='cd ../../../'
-
-alias cd....='cd ../../../../'
 
 alias cd.....='cd ../../../../'
 
