@@ -1,5 +1,11 @@
 # overdigo-alias
 
+## Como usar ?
+
+```javascript
+bash <(wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/overdigo-alias.sh)
+```
+
 ## Atalhos alias para distros baseadas em Debian / Ubuntu
 
 ### Lista de alias e explicação
