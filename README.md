@@ -1,7 +1,8 @@
 # overdigo-alias
-### H2 Atalhos alias para distros baseadas em Debian / Ubuntu
 
-### H3 Lista de alias: 
+## Atalhos alias para distros baseadas em Debian / Ubuntu
+
+### Lista de alias: 
 
 alias c='clear'
 
