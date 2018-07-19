@@ -44,4 +44,4 @@ bash <(wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/maste
 - alias limpa='apt-get clean && apt-get autoclean && apt-get autoremove' -> limpar apt-get
 - alias uso='ps aux | sort -nrk 3,3 | head -n 9' -> verifica os 9 processos com maior uso de CPU
 - alias mod='find . -mmin -10 -type f | xargs ls -l' -> visualizar arquivos recentemente modificados
-- alias comp='zopfli --i99 --gzip *.js && zopfli --i99 --gzip jquery.js && chown www-data: *'
+- alias comp='zopfli --i99 --gzip *.js && zopfli --i99 --gzip *.css && chown www-data: *'
