@@ -28,6 +28,7 @@ bash <(wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/maste
 - alias lt='ls -lthr'
 - alias lu='ls -ltuhr'
 - alias lx='ls -lXhB'
+- alias memo='watch -n 1 free -m'
 - alias maior='du -hsx * | sort -rh | head -20' -> Exibir maiores arquivos
 - alias porta='netstat -plnt' -> verificar portas dos serviços 
 - alias scr='/etc/init.d/redis-server restart' - > reiniciar redis-server
