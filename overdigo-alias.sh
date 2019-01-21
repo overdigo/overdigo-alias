@@ -1,6 +1,6 @@
 #!/bin/bash
-cd ~/
+cd $HOME
 wget https://raw.githubusercontent.com/overdigo/overdigo-alias/master/alias
-cat alias > .bashrc
-source .bashrc
+cat alias > $HOME/.bashrc
+source $HOME/.bashrc
 rm alias
