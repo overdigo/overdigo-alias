@@ -37,3 +37,6 @@ alias mod='find . -mmin -10 -type f | xargs ls -l'
 alias memo='watch -n 1 free -m'
 alias comp='zopfli --i99 --gzip *.js && zopfli --i99 --gzip *.css && chown www-data: *'
 alias chownwww='chown -R www-data: /var/www'
+wp() {
+  /usr/local/bin/wp "$@" --allow-root
+}
