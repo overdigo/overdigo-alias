@@ -34,10 +34,14 @@ alias sp71='/etc/init.d/php7.1-fpm restart'
 alias sp72='/etc/init.d/php7.2-fpm restart'
 alias sp73='/etc/init.d/php7.3-fpm restart'
 alias sp74='/etc/init.d/php7.4-fpm restart'
+alias sp8='/etc/init.d/php8.0-fpm restart'
+alias sp81='/etc/init.d/php8.1-fpm restart'
+alias sme='/etc/init.d/memcached restart'
 alias spo='/etc/init.d/postfix restart'
 alias upd='apt-get update && apt-get dist-upgrade'
 alias upt='apt-get update && apt-get upgrade'
 alias uso='ps aux | sort -nrk 3,3 | head -n 9'
+alias crontabe='crontab -u www-data -e'
 wp() {
   /usr/local/bin/wp "$@" --allow-root
 }
