@@ -39,6 +39,10 @@ bash <(wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/maste
 - alias sp7='/etc/init.d/php7.0-fpm restart' -> reiniciar php7.0
 - alias sp71='/etc/init.d/php7.1-fpm restart' -> reiniciar php7.1
 - alias sp72='/etc/init.d/php7.2-fpm restart' -> reiniciar php7.2
+- alias sp73='/etc/init.d/php7.3-fpm restart' -> reiniciar php7.3
+- alias sp74='/etc/init.d/php7.4-fpm restart' -> reiniciar php7.4
+- alias sp8='/etc/init.d/php8.0-fpm restart' -> reiniciar php8.0
+- alias sp81='/etc/init.d/php8.1-fpm restart' -> reiniciar php8.1
 - alias spo='/etc/init.d/postfix restart' -> reiniciar postfix
 - alias upt='apt-get update && apt-get upgrade' -> atualizar repositórios e sofwates via apt-get
 - alias upd='apt-get update && apt-get dist-upgrade' -> atualizar repositórios e sofwates via apt-get adicona e remove pacotes
