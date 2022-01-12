@@ -131,7 +131,7 @@ alias sme='/etc/init.d/memcached restart'
 alias spo='/etc/init.d/postfix restart'
 alias upd='apt-get update && apt-get dist-upgrade'
 alias upt='apt-get update && apt-get upgrade'
-alias uso='ps aux | sort -nrk 3,3 | head -n 9'
+alias uso='ps aux | sort -nrk 3,3 | head -n 15'
 alias crontabe='crontab -u www-data -e'
 wp() {
   /usr/local/bin/wp "$@" --allow-root
