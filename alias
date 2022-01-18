@@ -133,6 +133,8 @@ alias upd='apt-get update && apt-get dist-upgrade'
 alias upt='apt-get update && apt-get upgrade'
 alias uso='ps aux | sort -nrk 3,3 | head -n 15'
 alias crontabe='crontab -u www-data -e'
+alias ngx='bash <(wget -O - vtb.cx/nginx-ee || curl -sL vtb.cx/nginx-ee) --stable'
+alias mgc='rm -rf var/cache/* var/session/*'
 wp() {
   /usr/local/bin/wp "$@" --allow-root
 }
