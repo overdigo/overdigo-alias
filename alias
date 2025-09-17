@@ -88,10 +88,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias 644='chmod -R 644'
-alias 666='chmod -R 666'
-alias 755='chmod -R 755'
-alias 777='chmod -R 777'
+alias psmem='ps auxf | sort -nr -k 4 | head -40'
+alias pscpu='ps auxf | sort -nr -k 3 | head -40'
+alias ip='ip -c'
 alias c='clear'
 alias cd.....='cd ../../../../'
 alias cd....='cd ../../../'
@@ -116,27 +115,26 @@ alias grep='grep --color=auto'
 alias h='history | grep '
 alias home='cd ~'
 alias ip4='wget -qO- ipinfo.io/ip'
-alias ip6='wget -qO- ipapi.co/ip'
-alias l='ls -CF'
-alias la='ls -Alh'
-alias la='ls -alShr'
-alias labc='ls -lap'
-alias lc='ls -lcrh'
-alias lc='ls -ltchr'
-alias ldir='ls -l | egrep '\''^d'\'''
+alias ip6='wget -qO- v6.ipinfo.io/ip'
+# --- Configuração Base ---
+alias ls='ls --color=auto'   # Comando 'ls' padrão com cores. Essencial.
+# --- Listagens Rápidas ---
+alias l='ls -CF'             # Lista simples em colunas, com tipos de arquivo.
+alias ll='ls -alFh'          # A lista mais completa: todos os arquivos, detalhes, legível.
+alias la='ls -Alh'           # Alternativa mais limpa ao 'll' (sem '.' e '..').
+# --- Listagens Ordenadas ---
+alias ltr='ls -lth'           # Lista por tempo (mais recentes primeiro).
+alias lt='ls -lthr'         # ltr: Lista por tempo, do mais ANTIGO para o mais recente (Reverse)
+alias lkr='ls -lSh'         # lk: Lista por tamanho, MAIORES primeiro.
+alias lk='ls -lShr'       # lkr: Lista por tamanho, MENORES primeiro (reverso).
+alias lx='ls -lXh'           # Lista por extensão (agrupa .txt, .jpg, etc.).
+# --- Listagens Especiais ---
+alias lr='ls -lRh'           # Lista recursiva (mostra conteúdo de subdiretórios).
+alias lf='ls -l | grep "^-"' # Lista apenas ARQUIVOS (linhas que começam com '-').
+alias ld='ls -l | grep "^d"' # Lista apenas DIRETÓRIOS (linhas que começam com 'd').
 alias less='less -R'
-alias lf='ls -l | egrep -v '\''^d'\'''
 alias logs='sudo find /var/log -type f -exec file {} \; | grep '\''text'\'' | cut -d'\'' '\'' -f1 | sed -e'\''s/:$//g'\'' | grep -v '\''[0-9]$'\'' | xargs tail -f'
 alias limpa='sudo apt-get autoclean && sudo apt-get autoremove --purge && sudo apt-get clean -y'
-alias lk='ls -lShr'
-alias ll='ls -alFhs'
-alias lm='ls -alh |more'
-alias lr='ls -lRh'
-alias ls='ls --color=auto'
-alias lt='ls -lthr'
-alias lu='ls -ltuhr'
-alias lw='ls -xAh'
-alias lx='ls -lXBh'
 alias maior='du -hsx * | sort -rh | head -20'
 alias memo='watch -n 1 free -m'
 alias mkbz2='tar -cvjf'
@@ -154,12 +152,12 @@ alias p='ps aux | grep '
 alias ping='ping -c 10'
 alias porta='ss -plunt'
 alias ps='ps auxf'
-alias rebootforce='sudo shutdown -r -n now'
-alias rebootsafe='sudo shutdown -r now'
+alias psmem='ps auxf | sort -nr -k 4 | head -40'
+alias pscpu='ps auxf | sort -nr -k 3 | head -40'
 alias scr='systemctl restart redis.service && renice -n -6 -u redis'
-alias sma='/etc/init.d/mariadb restart && renice -n -5 -u mysql'
+alias sma='nice -n -15 systemctl restart mariadb.service && renice -n -5 -u mysql'
 alias sme='/etc/init.d/memcached restart'
-alias smr='/etc/init.d/mysql restart && renice -n -5 -u mysql'
+alias smr='nice -n -15 systemctl restart mysql.service && renice -n -5 -u mysql'
 alias snr='nginx -t && systemctl restart nginx.service'
 alias snt='nginx -t && systemctl reload nginx.service'
 alias sp6='/etc/init.d/php5.6-fpm restart'
@@ -171,14 +169,16 @@ alias sp74='/etc/init.d/php7.4-fpm restart'
 alias sp81='systemctl restart php8.1-fpm.service'
 alias sp82='systemctl restart php8.2-fpm.service'
 alias sp83='systemctl restart php8.3-fpm.service'
+alias sp84='systemctl restart php8.4-fpm.service'
 alias sp8='systemctl restart php8.0-fpm.service'
 alias spo='/etc/init.d/postfix restart'
 alias topcpu='/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -15'
 alias upd='sudo apt-get update && sudo apt-get dist-upgrade'
 alias ups='sudo apt-get update && sudo apt-get upgrade && sudo snap refresh'
 alias upt='sudo apt-get update && sudo apt-get upgrade'
-alias uso='ps aux | sort -nrk 3,3 | head -n 15'
+alias uso='ps aux | sort -nrk 3,3 | head -n 40'
 alias ver='lsb_release -a'
+alias test='gping 208.67.222.222 2620:119:35::35 1.1.1.1 2606:4700:4700::1111 8.8.8.8 2001:4860:4860::8888 9.9.9.9 2620:fe::fe'
 wp() {
   /usr/local/bin/wp "$@" --allow-root
 }
