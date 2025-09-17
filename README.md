@@ -3,7 +3,7 @@
 ## Como usar ?
 
 ```javascript
-bash <(wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/overdigo-alias.sh)
+cd ~ && wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/alias >> ~/.bashrc && source ~/.bashrc
 ```
 
 ## Atalhos alias para distros baseadas em Debian / Ubuntu
