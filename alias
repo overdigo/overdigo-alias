@@ -1,95 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias psmem='ps auxf | sort -nr -k 4 | head -40'
-alias pscpu='ps auxf | sort -nr -k 3 | head -40'
 alias ip='ip -c'
 alias c='clear'
 alias cd.....='cd ../../../../'
@@ -98,20 +6,16 @@ alias cd...='cd ../../'
 alias cd..='cd ..'
 alias chownwww='chown -R www-data:www-data /var/www'
 alias clock='grep -E "^model name|^cpu MHz" /proc/cpuinfo'
-alias comp='zopfli --i99 --gzip *.js && zopfli --i99 --gzip *.css && chown www-data:www-data *'
 alias countfiles='for t in files links directories; do echo `find . -type ${t:0:1} | wc -l` $t; done 2> /dev/null'
 alias cp='cp -i'
 alias crontabe='crontab -u www-data -e'
-alias da='date "+%Y-%m-%d %A %T %Z"'
-alias dfly='nice -n -7 dragonfly --cache_mode=true -dbnum 4 --bind localhost --port 6379 & disown'
 alias diskspace='du -S | sort -n -r |more'
-alias ebrc='edit ~/.bashrc'
-alias egrep='egrep --color=auto'
 alias f='find . | grep '
+alias egrep='egrep --color=auto'
+alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias folders='du -h --max-depth=1'
 alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
-alias grep='grep --color=auto'
 alias h='history | grep '
 alias home='cd ~'
 alias ip4='wget -qO- ipinfo.io/ip'
@@ -156,7 +60,6 @@ alias psmem='ps auxf | sort -nr -k 4 | head -40'
 alias pscpu='ps auxf | sort -nr -k 3 | head -40'
 alias scr='systemctl restart redis.service && renice -n -6 -u redis'
 alias sma='nice -n -15 systemctl restart mariadb.service && renice -n -5 -u mysql'
-alias sme='/etc/init.d/memcached restart'
 alias smr='nice -n -15 systemctl restart mysql.service && renice -n -5 -u mysql'
 alias snr='nginx -t && systemctl restart nginx.service'
 alias snt='nginx -t && systemctl reload nginx.service'
@@ -171,38 +74,15 @@ alias sp82='systemctl restart php8.2-fpm.service'
 alias sp83='systemctl restart php8.3-fpm.service'
 alias sp84='systemctl restart php8.4-fpm.service'
 alias sp8='systemctl restart php8.0-fpm.service'
-alias spo='/etc/init.d/postfix restart'
+alias sp85='systemctl restart php8.5-fpm.service'
 alias topcpu='/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -15'
 alias upd='sudo apt-get update && sudo apt-get dist-upgrade'
 alias ups='sudo apt-get update && sudo apt-get upgrade && sudo snap refresh'
 alias upt='sudo apt-get update && sudo apt-get upgrade'
-alias uso='ps aux | sort -nrk 3,3 | head -n 40'
+alias uso='ps aux | sort -nrk 3,3 | head -40'
+alias usom='ps auxf | sort -nr -k 4 | head -40'
 alias ver='lsb_release -a'
 alias test='gping 208.67.222.222 2620:119:35::35 1.1.1.1 2606:4700:4700::1111 8.8.8.8 2001:4860:4860::8888 9.9.9.9 2620:fe::fe'
 wp() {
-  /usr/local/bin/wp "$@" --allow-root
+/usr/local/bin/wp "$@" --allow-root
 }
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
