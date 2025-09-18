@@ -10,8 +10,6 @@ cd ~ && wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/mast
 
 ### Lista de alias e explicação
 
-- alias psmem='ps auxf | sort -nr -k 4 | head -40' # Lista os 40 processos que mais usam memória (RAM), ordenados do maior para o menor.
-- alias pscpu='ps auxf | sort -nr -k 3 | head -40' # Lista os 40 processos que mais usam CPU, ordenados decrescentemente.
 - alias ip='ip -c' # cores habilitadas (-c = color). ip addr fica colorido
 - alias c='clear' # Limpa a tela do terminal. Atalho rápido
 - alias cd.....='cd ../../../../' # Atalhos para subir múltiplos níveis de diretório rapidamente.
@@ -81,7 +79,8 @@ cd ~ && wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/mast
 - alias upd='sudo apt-get update && sudo apt-get dist-upgrade' # Atualiza lista de pacotes e faz atualização completa (inclui mudanças de kernel, etc).
 - alias ups='sudo apt-get update && sudo apt-get upgrade && sudo snap refresh' # Atualiza pacotes APT + atualiza pacotes Snap.
 - alias upt='sudo apt-get update && sudo apt-get upgrade' # Atualização padrão (sem dist-upgrade, mais segura).
-- alias uso='ps aux | sort -nrk 3,3 | head -n 40' # Igual ao pscpu — lista 40 processos que mais usam CPU.
+- alias uso='ps aux | sort -nrk 3,3 | head -40' # lista 40 processos que mais usam CPU.
+- alias usom='ps auxf | sort -nr -k 4 | head -40' # lista 40 processos que mais usam Memória
 - alias ver='lsb_release -a' # Mostra informações da distribuição Linux (nome, versão, codinome, etc).
 - alias test='gping 208.67.222.222 2620:119:35::35 1.1.1.1 2606:4700:4700::1111 8.8.8.8 2001:4860:4860::8888 9.9.9.9 2620:fe::fe' # Usa gping (ping gráfico) para testar conectividade com vários DNS públicos
 - wp() {
