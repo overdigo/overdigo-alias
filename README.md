@@ -84,6 +84,3 @@ cd ~ && wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/mast
 - alias usom='ps auxf | sort -nr -k 4 | head -40' # lista 40 processos que mais usam Memória
 - alias ver='lsb_release -a' # Mostra informações da distribuição Linux (nome, versão, codinome, etc).
 - alias test='gping 208.67.222.222 2620:119:35::35 1.1.1.1 2606:4700:4700::1111 8.8.8.8 2001:4860:4860::8888 9.9.9.9 2620:fe::fe' # Usa gping (ping gráfico) para testar conectividade com vários DNS públicos
-- wp() {
-  /usr/local/bin/wp "$@" --allow-root
-} # Função que executa o WP-CLI (ferramenta de linha de comando do WordPress) sempre como root
