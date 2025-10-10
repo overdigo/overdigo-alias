@@ -83,7 +83,7 @@ alias uso='ps aux | sort -nrk 3,3 | head -40'
 alias usom='ps auxf | sort -nr -k 4 | head -40'
 alias ver='lsb_release -a'
 alias systemctl='nice -n -15 systemctl'
-alias test='gping 208.67.222.222 2620:119:35::35 1.1.1.1 2606:4700:4700::1111 8.8.8.8 2001:4860:4860::8888 9.9.9.9 2620:fe::fe'
+#alias test='gping 208.67.222.222 2620:119:35::35 1.1.1.1 2606:4700:4700::1111 8.8.8.8 2001:4860:4860::8888 9.9.9.9 2620:fe::fe'
 wp() {
 /usr/local/bin/wp "$@" --allow-root
 }
