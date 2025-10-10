@@ -56,7 +56,7 @@ cd ~ && wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/mast
 - alias openports='netstat -nape --inet' # Lista portas de rede abertas com detalhes: processo, PID, usuário, etc.
 - alias p='ps aux | grep ' # Procura por processos. Ex: p nginx → lista processos com "nginx".
 - alias ping='ping -c 10' # Envia apenas 10 pacotes ICMP e para (evita ping infinito)
-- alias porta='ss -plunt' # Mostra portas TCP/UDP ouvindo (-l), com processo (-p), sem resolver nomes (-n), TCP/UDP (-tu). Moderno e rápido.
+- alias porta='ss -lunt' # Mostra portas TCP/UDP ouvindo (-l), com processo (-p), sem resolver nomes (-n), TCP/UDP (-tu). Moderno e rápido.
 - alias ps='ps auxf' # Lista todos os processos em formato de árvore (mais legível)
 - alias scr='systemctl restart redis.service && renice -n -6 -u redis' # Reinicia o Redis e aumenta sua prioridade.
 - alias sma='nice -n -15 systemctl restart mariadb.service && renice -n -5 -u mysql' # Reinicia o MariaDB com prioridade muito alta (nice -15) e ajusta prioridade do usuário mysql
@@ -75,6 +75,7 @@ cd ~ && wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/mast
 - alias sp83='systemctl restart php8.3-fpm.service' # Reiniciam os serviços do PHP-FPM 8.3
 - alias sp84='systemctl restart php8.4-fpm.service' # Reiniciam os serviços do PHP-FPM 8.4
 - alias sp85='systemctl restart php8.5-fpm.service' # Reiniciam os serviços do PHP-FPM 8.5
+- alias systemctl='nice -n -15 systemctl'
 - alias topcpu='/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -15' # Mostra os 15 processos que mais consomem CPU, com detalhes: %CPU, PID, usuário e comando.
 - alias upd='sudo apt-get update && sudo apt-get dist-upgrade' # Atualiza lista de pacotes e faz atualização completa (inclui mudanças de kernel, etc).
 - alias ups='sudo apt-get update && sudo apt-get upgrade && sudo snap refresh' # Atualiza pacotes APT + atualiza pacotes Snap.
