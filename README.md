@@ -8,7 +8,7 @@ cd ~ ; wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/maste
 ## Para ROOT
 
 ```javascript
-sudo wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/alias >> /root/.bashrc ; sudo source /root/.bashrc
+sudo bash -c 'wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/alias >> /root/.bashrc' ; source /root/.bashrc
 ```
 
 ## Atalhos alias para distros baseadas em Debian / Ubuntu
