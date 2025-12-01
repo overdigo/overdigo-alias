@@ -3,7 +3,7 @@
 ## Como usar ?
 
 ```javascript
-cd ~ ; wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/alias >> .bashrc ; source .bashrc
+cd /tmp ; wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/alias >> ~/.bashrc ; source ~/.bashrc
 ```
 ## Para ROOT
 
