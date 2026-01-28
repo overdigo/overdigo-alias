@@ -27,8 +27,8 @@ alias l='ls -CF'             # Lista simples em colunas, com tipos de arquivo.
 alias ll='ls -alFh'          # A lista mais completa: todos os arquivos, detalhes, legível.
 alias la='ls -Alh'           # Alternativa mais limpa ao 'll' (sem '.' e '..').
 # --- Listagens Ordenadas ---
-alias ltr='ls -lth'           # Lista por tempo (mais recentes primeiro).
-alias lt='ls -lthr'         # ltr: Lista por tempo, do mais ANTIGO para o mais recente (Reverse)
+alias ltr='ls -alFht'           # Lista por tempo (mais recentes primeiro).
+alias lt='ls -alFhtr'         # ltr: Lista por tempo, do mais ANTIGO para o mais recente (Reverse)
 alias lkr='ls -lSh'         # lk: Lista por tamanho, MAIORES primeiro.
 alias lk='ls -lShr'       # lkr: Lista por tamanho, MENORES primeiro (reverso).
 alias lx='ls -lXh'           # Lista por extensão (agrupa .txt, .jpg, etc.).
