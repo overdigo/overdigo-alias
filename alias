@@ -18,8 +18,8 @@ alias folders='du -h --max-depth=1'
 alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 alias h='history | grep '
 alias home='cd ~'
-alias ip4='wget -qO- ipinfo.io/ip'
-alias ip6='wget -qO- v6.ipinfo.io/ip'
+alias ip4='echo -e "\e[1;93m$(wget -qO- ipinfo.io/ip || curl -sL ipinfo.io/ip)\e[0m"'
+alias ip6='echo -e "\e[1;93m$(wget -qO- v6.ipinfo.io/ip || curl -sL v6.ipinfo.io/ip)\e[0m"'
 # --- Configuração Base ---
 alias ls='ls --color=auto'   # Comando 'ls' padrão com cores. Essencial.
 # --- Listagens Rápidas ---
