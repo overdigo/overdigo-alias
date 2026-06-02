@@ -3,12 +3,12 @@
 ## Como usar ?
 
 ```javascript
-cd /tmp ; wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/alias >> ~/.bashrc ; source ~/.bashrc ; cd -
+cd /tmp ; wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias >> ~/.bashrc ; source ~/.bashrc ; cd -
 ```
 ## Para ROOT
 
 ```javascript
-sudo bash -c 'wget -O - https://raw.githubusercontent.com/overdigo/overdigo-alias/master/alias >> /root/.bashrc && source /root/.bashrc'
+sudo bash -c 'wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias >> /root/.bashrc && source /root/.bashrc'
 ```
 
 ## Atalhos alias para distros baseadas em Debian / Ubuntu
