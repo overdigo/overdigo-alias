@@ -1,3 +1,4 @@
+
 alias ip='ip -c'
 alias c='clear'
 alias cd.....='cd ../../../../'
