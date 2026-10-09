@@ -1,11 +1,10 @@
-
 alias ip='ip -c'
 alias c='clear'
 alias cd.....='cd ../../../../'
 alias cd....='cd ../../../'
 alias cd...='cd ../../'
 alias cd..='cd ..'
-alias chownwww='chown -R www-data:www-data /var/www'
+alias chownwww='chown -R www-data:www-data .'
 alias clock='grep -E "^model name|^cpu MHz" /proc/cpuinfo'
 alias countfiles='for t in files links directories; do echo `find . -type ${t:0:1} | wc -l` $t; done 2> /dev/null'
 alias cp='cp -i'
