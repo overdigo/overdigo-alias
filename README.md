@@ -1,14 +1,25 @@
-# overdigo-alias
+# Como usar overdigo-alias ?
 
-## Como usar ?
+## Para usuário com wget
 
 ```javascript
 cd /tmp ; wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias >> ~/.bashrc ; source ~/.bashrc ; cd -
 ```
-## Para ROOT
+## Para ROOT com wget
 
 ```javascript
 sudo bash -c 'wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias >> /root/.bashrc && source /root/.bashrc'
+```
+
+## Para usuário com curl
+
+```javascript
+cd /tmp && curl -fsSL https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias >> ~/.bashrc && source ~/.bashrc && cd -
+```
+## Para ROOT com curl
+
+```javascript
+sudo bash -c 'curl -fsSL https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias >> /root/.bashrc && source /root/.bashrc'
 ```
 
 ## Atalhos alias para distros baseadas em Debian / Ubuntu
@@ -21,7 +32,7 @@ sudo bash -c 'wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@mast
 - alias cd....='cd ../../../' # Atalhos para subir múltiplos níveis de diretório rapidamente.
 - alias cd...='cd ../../' # Atalhos para subir múltiplos níveis de diretório rapidamente.
 - alias cd..='cd ..' # Atalhos para subir múltiplos níveis de diretório rapidamente.
-- alias chownwww='chown -R www-data:www-data /var/www' # Define o proprietário e grupo www-data recursivamente em /var/www
+- alias chownwww='chown -R www-data:www-data .' # Define o proprietário e grupo www-data recursivamente na pasta atual
 - alias clock='grep -E "^model name|^cpu MHz" /proc/cpuinfo' # Mostra o modelo e frequência atual do processador. Informações básicas de CPU
 - alias countfiles='for t in files links directories; do echo `find . -type ${t:0:1} | wc -l` $t; done 2> /dev/null' # Conta arquivos, links e diretórios no diretório atual
 - alias cp='cp -i' # Copia arquivos com confirmação antes de sobrescrever (-i = interactive).
@@ -80,6 +91,7 @@ sudo bash -c 'wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@mast
 - alias sp83='systemctl restart php8.3-fpm.service' # Reiniciam os serviços do PHP-FPM 8.3
 - alias sp84='systemctl restart php8.4-fpm.service' # Reiniciam os serviços do PHP-FPM 8.4
 - alias sp85='systemctl restart php8.5-fpm.service' # Reiniciam os serviços do PHP-FPM 8.5
+- alias sp86='systemctl restart php8.6-fpm.service' # Reiniciam os serviços do PHP-FPM 8.6
 - alias systemctl='nice -n -15 systemctl'
 - alias topcpu='/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -15' # Mostra os 15 processos que mais consomem CPU, com detalhes: %CPU, PID, usuário e comando.
 - alias upd='sudo apt-get update && sudo apt-get dist-upgrade' # Atualiza lista de pacotes e faz atualização completa (inclui mudanças de kernel, etc).
