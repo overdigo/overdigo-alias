@@ -1,0 +1,1 @@
+/home/loja01/dev/editor-markdown/best-post.md

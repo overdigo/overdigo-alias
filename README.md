@@ -1,5 +1,9 @@
 # Como usar overdigo-alias ?
 
+O projeto disponibiliza duas versões:
+- **`alias`**: Para usuário comum (inclui `sudo` nos comandos administrativos necessários).
+- **`alias-root`**: Apenas para o usuário `root` (nenhum comando utiliza `sudo` e inclui prioridade `nice` no `systemctl`).
+
 ## Para usuário com wget
 
 ```javascript
@@ -8,7 +12,7 @@ cd /tmp ; wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/a
 ## Para ROOT com wget
 
 ```javascript
-sudo bash -c 'wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias >> /root/.bashrc && source /root/.bashrc'
+sudo bash -c 'wget -O - https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias-root >> /root/.bashrc && source /root/.bashrc'
 ```
 
 ## Para usuário com curl
@@ -19,7 +23,7 @@ cd /tmp && curl -fsSL https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master
 ## Para ROOT com curl
 
 ```javascript
-sudo bash -c 'curl -fsSL https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias >> /root/.bashrc && source /root/.bashrc'
+sudo bash -c 'curl -fsSL https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@master/alias-root >> /root/.bashrc && source /root/.bashrc'
 ```
 
 ## Atalhos alias para distros baseadas em Debian / Ubuntu
@@ -92,7 +96,7 @@ sudo bash -c 'curl -fsSL https://cdn.jsdelivr.net/gh/overdigo/overdigo-alias@mas
 - alias sp84='systemctl restart php8.4-fpm.service' # Reiniciam os serviços do PHP-FPM 8.4
 - alias sp85='systemctl restart php8.5-fpm.service' # Reiniciam os serviços do PHP-FPM 8.5
 - alias sp86='systemctl restart php8.6-fpm.service' # Reiniciam os serviços do PHP-FPM 8.6
-- alias systemctl='nice -n -15 systemctl'
+- alias systemctl='nice -n -15 systemctl' # Apenas para root: executa systemctl com prioridade alta (nice -15)
 - alias topcpu='/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -15' # Mostra os 15 processos que mais consomem CPU, com detalhes: %CPU, PID, usuário e comando.
 - alias upd='sudo apt-get update && sudo apt-get dist-upgrade' # Atualiza lista de pacotes e faz atualização completa (inclui mudanças de kernel, etc).
 - alias ups='sudo apt-get update && sudo apt-get upgrade && sudo snap refresh' # Atualiza pacotes APT + atualiza pacotes Snap.
